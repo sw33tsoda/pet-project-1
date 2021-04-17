@@ -3,7 +3,7 @@ const $ = (selector:string) : HTMLElement => {
     return document.querySelector<HTMLElement>(selector);
 }
 
-// BEM Modifier.
+// BEM Modifier ====================================================== //
 
 class BEMModifier {
     public elementName:string;

@@ -2,7 +2,7 @@
 var $ = function (selector) {
     return document.querySelector(selector);
 };
-// BEM Modifier.
+// BEM Modifier ====================================================== //
 var BEMModifier = /** @class */ (function () {
     function BEMModifier(elementName) {
         var _this = this;

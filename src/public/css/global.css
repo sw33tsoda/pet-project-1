@@ -7,9 +7,9 @@
 .header .navbar__icon{color:white;font-size:1.25em}
 .header .navbar__list{position:absolute;right:5px;top:40px}
 .header .navbar__list--hide{display:none}
-.header .navbar__list__item{list-style-type:none;text-align:right;opacity:0;animation:fadeIn 1s forwards}
-.header .navbar__list__item a{border-right:0 solid crimson;font-size:1.5em;transition:.25s}
-.header .navbar__list__item a:hover{padding-right:5px;border-right:10px solid crimson}
+.header .navbar__list__item{list-style-type:none;text-align:right;animation:fadeIn 1s forwards;opacity:0}
+.header .navbar__list__item a{border-right:0 solid crimson;font-size:1.75em;transition:.25s}
+.header .navbar__list__item a:hover{padding-right:5px;border-right:10px solid crimson;background:linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(107,107,107,0.5) 100%)}
 .header .navbar__list__item:nth-child(1){animation-delay:.1s}
 .header .navbar__list__item:nth-child(2){animation-delay:.2s}
 .header .navbar__list__item:nth-child(3){animation-delay:.3s}
