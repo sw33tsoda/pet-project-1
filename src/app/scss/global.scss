@@ -1,0 +1,38 @@
+// Variables
+@import 'variables';
+// Mixins
+@import 'mixins';
+// Animations
+@import 'animations';
+
+
+// Header
+@import './layouts/header/header.scss';
+
+
+// Global elements
+* {
+    padding:0;
+    margin:0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+// Title
+.main-title {
+    color: white;
+    animation: fadeIn 1s;
+    animation-delay: 0.15s;
+    span {
+        color:crimson;
+    }
+}
+
+body {
+    background-image:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url(./../../assets/img/pic_1);
+    background-size: cover;
+    background-blend-mode: saturation;
+}

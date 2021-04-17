@@ -1,0 +1,43 @@
+$navbar-height:35px;
+$navbar-width:35px;
+
+.navbar {
+    width: $navbar-width;
+    height: $navbar-height;
+    background: crimson;
+    cursor: pointer;
+
+    @include flex();
+
+    &__icon {
+        color:white;
+        font-size:1.25em;
+    }
+
+    &__list {
+        position: absolute;
+        right: 5px;
+        top: $navbar-height + 5px;
+        &__item {
+            list-style-type: none;
+            text-align: right;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            a {
+                border-right: 0px solid crimson;
+                font-size: 1.5em;
+                transition: 0.25s;
+                &:hover {
+                    padding-right: 5px;
+                    border-right: 10px solid crimson;
+                }
+            }
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    animation-delay: ($i * 0.10s);
+                }
+            }
+        }
+    }
+}
