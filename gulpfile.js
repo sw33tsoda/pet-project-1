@@ -1,7 +1,9 @@
 const browserSync = require('browser-sync');
 const Gulp = require('gulp');
 const Scss = require('gulp-sass');
+const TypeScript = require('gulp-typescript');
 const UglifyCSS = require('gulp-uglifycss');
+const UglifyJS = require('gulp-uglify');
 
 // SCSS ===> CSS (Assets)
 Gulp.task('scss', () => Gulp.src('./src/app/scss/*.scss')
@@ -19,19 +21,41 @@ Gulp.task('css', () => Gulp.src('./src/assets/css/*.css')
     .pipe(Gulp.dest('./src/public/css/'))
 );
 
-Gulp.task('run',Gulp.series(['scss','css']));
+Gulp.task('typescript', () => Gulp.src('./src/app/ts/*.ts')
+    .pipe(TypeScript({
+        removeComments: true,
+    }))
+    .pipe(Gulp.dest('./src/assets/js/'))
+);
+
+Gulp.task('javascript', () => Gulp.src('./src/assets/js/*.js')
+    .pipe(UglifyJS())
+    .pipe(Gulp.dest('./src/public/js/'))
+);
+
+Gulp.task('run',Gulp.series(['scss','css'],['typescript','javascript']));
 
 Gulp.task('watch', () => {
 
     browserSync({
         server:{
-            baseDir:'.'
+            baseDir:'./'
         }
     });
 
+    // Watching HTML
     Gulp.watch('./index.html').on('change',browserSync.reload);
+
+    // Watching CSS
     Gulp.watch('./src/app/scss/', Gulp.series(['scss']));
-    Gulp.watch('./src/assets/css/*.css', Gulp.series(['css'])).on('change',browserSync.reload);
+    Gulp.watch('./src/assets/css/*.css', Gulp.series(['css']));
+    Gulp.watch('./src/public/css/*.css').on('change',browserSync.reload);
+
+    // Watching Javascript
+    Gulp.watch('./src/app/ts/', Gulp.series(['typescript']));
+    Gulp.watch('./src/assets/js/*.js', Gulp.series(['javascript']));
+    Gulp.watch('./src/public/js/*.js').on('change',browserSync.reload);
+
 });
 
 Gulp.task('default',Gulp.series('run','watch'));

@@ -16,6 +16,8 @@
     "node-sass": "^5.0.0"
   },
   "dependencies": {
-    "gulp-uglifycss": "^1.1.0"
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglifycss": "^1.1.0",
+    "typescript": "^4.2.4"
   }
 }
