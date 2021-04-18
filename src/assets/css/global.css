@@ -47,17 +47,33 @@
   position: absolute;
   right: 5px;
   top: 40px;
+  display: none;
 }
 
 .header .navbar__list--hide {
-  display: none;
+  display: block;
+}
+
+.header .navbar__list--hide > li {
+  animation: fadeOut 0.5s forwards;
+}
+
+.header .navbar__list--show {
+  display: block;
+}
+
+.header .navbar__list--show > li {
+  animation: fadeIn 0.5s forwards;
+  opacity: 0;
+}
+
+.header .navbar__list.hidden {
+  display: none !important;
 }
 
 .header .navbar__list__item {
   list-style-type: none;
   text-align: right;
-  animation: fadeIn 1s forwards;
-  opacity: 0;
 }
 
 .header .navbar__list__item a {

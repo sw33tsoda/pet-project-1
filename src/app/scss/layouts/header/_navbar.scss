@@ -19,16 +19,29 @@ $navbar-width:35px;
         right: 5px;
         top: $navbar-height + 5px;
         // opacity: 0;
+        display:none;
         &--hide {
-            display:none;
+            display: block;
+            > li {
+                animation: fadeOut 0.5s forwards;
+            }
+        }
+        
+        &--show {
+            display: block;
+            > li {
+                animation: fadeIn 0.5s forwards;
+                opacity: 0;
+            }
+        }
+
+        &.hidden {
+            display: none !important;
         }
         
         &__item {
             list-style-type: none;
             text-align: right;
-            animation: fadeIn 1s forwards;
-            opacity: 0;
-            
 
             a {
                 border-right: 0px solid crimson;
@@ -41,6 +54,7 @@ $navbar-width:35px;
                 }
             }
 
+            // Loop animation delay.
             @for $i from 1 through 5 {
                 &:nth-child(#{$i}) {
                     animation-delay: ($i * 0.10s);
