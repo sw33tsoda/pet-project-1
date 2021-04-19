@@ -1,3 +1,20 @@
+$breakpoints: (
+    mobile: (min:320px, max:480px),
+    tablet: (min:481px, max:1024px),
+    pc:     (min:1025px, max:100000000000px),
+);
+
+// Responsive breakpoints 
+@mixin breakpoints($devices...) {
+    @each $device in $devices {
+        @media (min-width:map-get(map-get($breakpoints, $device),min)) and (max-width:map-get(map-get($breakpoints, $device),max)) {
+            @content;
+        }
+    } 
+}
+
+
+// Flex.
 @mixin flex($justfy-content: center,$align-items: center,$flex-direction: row) {
     display: flex;
     justify-content: $justfy-content;

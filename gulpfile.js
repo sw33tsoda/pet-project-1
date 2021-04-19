@@ -55,7 +55,11 @@ Gulp.task('watch', () => {
     Gulp.watch('./src/app/ts/', Gulp.series(['typescript']));
     Gulp.watch('./src/assets/js/*.js', Gulp.series(['javascript']));
     Gulp.watch('./src/public/js/*.js').on('change',browserSync.reload);
-
+    console.log(`
+        ❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤\n
+        ❤                sw33tsoda                ❤\n
+        ❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤
+    `);
 });
 
 Gulp.task('default',Gulp.series('run','watch'));

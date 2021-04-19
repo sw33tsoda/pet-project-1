@@ -28,26 +28,62 @@
 }
 
 .header .navbar {
-  width: 35px;
-  height: 35px;
-  background: crimson;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  .header .navbar {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .header .navbar {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+}
+
 .header .navbar__icon {
+  display: none;
   color: white;
   font-size: 1.25em;
 }
 
-.header .navbar__list {
-  position: absolute;
-  right: 5px;
-  top: 40px;
-  display: none;
+@media (min-width: 320px) and (max-width: 480px) {
+  .header .navbar__icon {
+    display: block;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .header .navbar__icon {
+    display: block;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .header .navbar__list {
+    position: absolute;
+    right: 5px;
+    top: 40px;
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .header .navbar__list {
+    position: absolute;
+    right: 5px;
+    top: 40px;
+    display: none;
+  }
 }
 
 .header .navbar__list--hide {
@@ -68,7 +104,7 @@
 }
 
 .header .navbar__list.hidden {
-  display: none !important;
+  display: none;
 }
 
 .header .navbar__list__item {
@@ -76,13 +112,19 @@
   text-align: right;
 }
 
-.header .navbar__list__item a {
+@media (min-width: 1025px) and (max-width: 100000000000px) {
+  .header .navbar__list__item {
+    display: inline;
+  }
+}
+
+.header .navbar__list__item__link {
   border-right: 0px solid crimson;
   font-size: 1.75em;
   transition: 0.25s;
 }
 
-.header .navbar__list__item a:hover {
+.header .navbar__list__item__link:hover {
   padding-right: 5px;
   border-right: 10px solid crimson;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(107, 107, 107, 0.5) 100%);
