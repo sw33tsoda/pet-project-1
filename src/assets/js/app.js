@@ -1,8 +1,4 @@
 var windowResizeDebounce = null;
-function onWidthChanges(width, callback) {
-    if (window.outerWidth > width)
-        callback();
-}
 var $ = function (selector) {
     return document.querySelector(selector);
 };
@@ -40,30 +36,41 @@ var Navbar = (function () {
             _this.ele = eleName;
             return _this;
         };
+        this.useScrollToElementOnClick = function (navItemIds) {
+            for (var _i = 0, navItemIds_1 = navItemIds; _i < navItemIds_1.length; _i++) {
+                var _id = navItemIds_1[_i];
+                $(_id).addEventListener('click', function (event) {
+                    var id = event.target.id;
+                    id = id.slice(1, id.length);
+                    $("#" + id).scrollIntoView({ behavior: 'smooth', block: 'end' });
+                });
+            }
+            return _this;
+        };
         this.toggle = function () {
             _this.isToggle = !_this.isToggle;
-            var _block = new BEMModifier(_this.block);
-            var _ele = new BEMModifier(_this.ele);
+            var bem_block = new BEMModifier(_this.block);
+            var bem_ele = new BEMModifier(_this.ele);
             if (_this.firstInteraction) {
-                $("." + _ele.name).classList.add(_ele.modifier('show'));
+                $("." + bem_ele.name).classList.add(bem_ele.modifier('show'));
                 _this.firstInteraction = false;
             }
             if (!_this.isToggle) {
-                $("." + _ele.name).classList.replace(_ele.modifier('show'), _ele.modifier('hide'));
-                $("." + _block.name).style.backgroundColor = "";
+                $("." + bem_ele.name).classList.replace(bem_ele.modifier('show'), bem_ele.modifier('hide'));
+                $("." + bem_block.name).style.backgroundColor = "";
             }
             else {
-                $("." + _ele.name).classList.replace(_ele.modifier('hide'), _ele.modifier('show'));
-                $("." + _block.name).style.backgroundColor = "crimson";
+                $("." + bem_ele.name).classList.replace(bem_ele.modifier('hide'), bem_ele.modifier('show'));
+                $("." + bem_block.name).style.backgroundColor = "crimson";
             }
-            if ($("." + _ele.name).classList.contains(_ele.modifier('hide'))) {
+            if ($("." + bem_ele.name).classList.contains(bem_ele.modifier('hide'))) {
                 setTimeout(function () {
-                    if ($("." + _ele.name).classList.contains(_ele.modifier('hide')))
-                        $("." + _ele.name).classList.add('hidden');
+                    if ($("." + bem_ele.name).classList.contains(bem_ele.modifier('hide')))
+                        $("." + bem_ele.name).classList.add('hidden');
                 }, _this.hideDelay);
             }
             else
-                $("." + _ele.name).classList.remove('hidden');
+                $("." + bem_ele.name).classList.remove('hidden');
         };
     }
     return Navbar;
@@ -71,19 +78,23 @@ var Navbar = (function () {
 var App = (function () {
     function App() {
         window.onload = function () {
-            onWidthChanges(1024, function () {
-            });
         };
-        window.addEventListener('resize', function (event) {
-            clearInterval(windowResizeDebounce);
-            windowResizeDebounce = setTimeout(function () {
-                onWidthChanges(1024, function () {
-                });
-            }, 50);
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 35) {
+                $('.header').classList.add('breakline');
+            }
+            else if (window.scrollY <= 35) {
+                $('.header').classList.remove('breakline');
+            }
         });
     }
     App.prototype.main = function () {
-        new Navbar().setTarget('.navbar__icon').setHideDelay(1000).setBlock('navbar').setEle('navbar__list');
+        new Navbar()
+            .setTarget('.navbar__icon')
+            .setHideDelay(1000)
+            .setBlock('navbar')
+            .setEle('navbar__list')
+            .useScrollToElementOnClick(['#_homepage', '#_services', '#_our-team', '#_products', '#_contact']);
     };
     return App;
 }());

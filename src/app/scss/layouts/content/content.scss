@@ -1,0 +1,15 @@
+.content {
+    color:white;
+    
+    .heading {
+        padding-top: $navbar-height + 5px;  
+        width: 100%;
+        height: $heading-height;
+        position: relative;
+        // background:darkcyan;
+
+        @import 'slider';
+    }
+    @import 'services';
+    @import 'subContentTitle';
+}

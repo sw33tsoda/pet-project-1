@@ -21,3 +21,12 @@ $breakpoints: (
     align-items: $align-items;
     flex-direction: $flex-direction;
 }
+
+// Grid.
+
+@mixin grid($grid-template-columns: auto,$column-gap: 0,$row-gap: 0) {
+    display:grid;
+    grid-template-columns: $grid-template-columns;
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+}

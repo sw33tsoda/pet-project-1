@@ -1,0 +1,33 @@
+.sub-content-title {
+    &--right {
+        h1 {
+            text-align: right;
+        }
+    }
+    margin:0 auto;
+    margin-top: 25px;
+    max-width: 80vw;
+    &__big-title {
+        color:crimson;
+        text-align: center;
+        font-size: 4em;
+        // font-size: 4vw;
+        // &::before {
+            // content: '-';
+            // }
+        }
+        
+    &__the-title {
+        &::before {
+            content: '◈';
+            margin-right: 5px;
+        }
+        // border-left: 10px solid crimson;
+        color:crimson;
+        // border-bottom: 1px solid crimson;
+        margin-bottom: 2.5px;
+    }
+    &__the-subheading {
+
+    }
+}

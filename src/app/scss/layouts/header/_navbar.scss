@@ -1,5 +1,5 @@
-$navbar-height:35px;
-$navbar-width:35px;
+// $navbar-height:35px;
+// $navbar-width:35px;
 
 .navbar {
     @include breakpoints(mobile,tablet) {
@@ -8,6 +8,8 @@ $navbar-width:35px;
         cursor: pointer;
     }
 
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-weight: bold;
     @include flex;
 
     &__icon {
@@ -47,14 +49,22 @@ $navbar-width:35px;
         }
         
         &__item {
+            cursor: pointer;
             @include breakpoints(pc) {
                 display: inline;
+                margin-right: 20px;
+                // ::before {
+                //     content: '「';
+                // }
+                // ::after {
+                //     content: '」';
+                // }
             }
             list-style-type: none;
             text-align: right;
             &__link {
                 border-right: 0px solid crimson;
-                font-size: 1.75em;
+                font-size: 1.5em;
                 transition: 0.25s;
                 &:hover {
                     padding-right: 5px;

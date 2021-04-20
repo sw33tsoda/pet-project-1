@@ -1,0 +1,59 @@
+.services {
+    margin:0 auto;
+    margin-top: 25px;
+    max-width: 80vw;
+    &__service-show {
+        @include grid(1fr 1fr, 10px);
+
+        > div {
+            padding:25px;
+            height: 400px;
+        }
+        
+        &__left {
+            @include flex();
+            // flex-grow:1;
+
+            &__picture img {
+                width: 90%;
+            }
+        }
+
+        .swap {
+            order:2;
+        }
+        
+        &__right {
+            // flex-grow:1 !important;
+            @include flex(center,start,row);
+            &__title, &__subheading {
+                writing-mode:vertical-lr;
+                margin-bottom: 5px;
+            }
+
+            &__title {
+                &::before {
+                    content:'「 ';
+                    color:crimson;  
+                }
+                &::after {
+                    content:' 」';
+                    color:crimson;  
+
+                }
+                margin-right: 10px;
+            }
+            &__subheading {
+                color:crimson;  
+                font-size: 1.25em;
+                font-weight: bold;
+            }
+            &__description {
+                writing-mode: vertical-rl;
+
+                // font-style: italic;
+                // text-align: justify;
+            }
+        }
+    }
+}

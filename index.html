@@ -9,6 +9,11 @@
 
         <!-- CDN CSSs -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
     </head>
     <body>
         <div class="header">
@@ -19,15 +24,71 @@
                 <i class="fas fa-bars navbar__icon"></i>
 
                 <ul class="navbar__list">
-                    <li class="navbar__list__item"><a class="navbar__list__item__link" href="#homepage">ホームページ</a></li>
-                    <li class="navbar__list__item"><a class="navbar__list__item__link" href="#services">サービス</a></li>
-                    <li class="navbar__list__item"><a class="navbar__list__item__link" href="#our-team">私たちのチーム</a></li>
-                    <li class="navbar__list__item"><a class="navbar__list__item__link" href="#products">製品</a></li>
-                    <li class="navbar__list__item"><a class="navbar__list__item__link" href="#contact">連絡先</a></li>
+                    <li class="navbar__list__item"><a id="_homepage" class="navbar__list__item__link">ホームページ</a></li>
+                    <li class="navbar__list__item"><a id="_services" class="navbar__list__item__link">サービス</a></li>
+                    <li class="navbar__list__item"><a id="_our-team" class="navbar__list__item__link">私たちのチーム</a></li>
+                    <li class="navbar__list__item"><a id="_products" class="navbar__list__item__link">製品</a></li>
+                    <li class="navbar__list__item"><a id="_contact" class="navbar__list__item__link">連絡先</a></li>
                 </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div id="homepage"></div>
+            <div class="heading">
+                <div class="slider">
+                    <div class="slider__slide-show">
+                        <!-- empty -->
+                    </div>
+                    <div class="slider__controls">
+                        <div class="slider__controls__switch"></div>
+                        <div class="slider__controls__switch"></div>
+                        <div class="slider__controls__switch"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-content-title">
+                <h1 class="sub-content-title__big-title">サービス</h1>
+                <h1 class="sub-content-title__the-title">会議な検抜</h1>
+                <p class="sub-content-title__subheading">制侵ぎとが海緒サナヨノ郵談1観ルホミ検必モサヱヌ目以ナカサ団男団ツホソ科味う嫉見メトスシ護属意だずえぐ記写凶まぼげむ。近まス場市オネ豊奈的けき下69予ホテス側森ぞま提打果わすゃず奏似サテチウ足新観どリ職風命刃尿ー。</p>
+            </div>
+            <div id="services" class="services wow animate__animated animate__bounceInLeft" data-wow-delay="0.5s">
+                <div class="services__service-show">
+                    <div class="services__service-show__left">
+                        <div class="services__service-show__left__picture">
+                            <img src="./src/assets/img/services/pic1.png" />
+                        </div>
+                    </div>
+                    <div class="services__service-show__right">
+                        <h1 class="services__service-show__right__title">金 品 質 の 刺 身</h1>
+                        <p class="services__service-show__right__subheading">囲 づ 鶏 今 ラ ム ヘ。</p>
+                        <p class="services__service-show__right__description">言ーみす課休真がンでひ率女仲南づ国尽紙きだず楷表ルタ容7次げゆけー法隊かりで今調えっ会議な検抜ノロヨ多籍華踏麻つり。囲づ鶏今ラムヘス審日は大投ネテキ原芸ウコヤ無細ツイヌ辞守こル弾行メ金愛ニコ約載はんさ化造ゅえつ臣理ぱ権制由筆じになず。朝り供取米合36晴0確チマニセ帯子ムミナノ演米ヱ塗月7犯ロニツテ曜連びトぽ崎太統抑げ。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-content-title sub-content-title--right">
+                <h1 class="sub-content-title__the-title">ル弾行メ金愛</h1>
+                <p class="sub-content-title__subheading">考ルレ念表テヒイネ要8供セ発著ッずク栖問ヲ到玲組アクイノ覧渡モ引沢ムメ毎蓄げもイぶ百許品ケヱネ界的ヲ山路ら奪浦イホルカ話響ぼ治所ワフラテ期敷ゆゃ野需乙ねッだ。</p>
+            </div>
+            <div class="services wow animate__animated animate__bounceInRight" data-wow-delay="0.5s">
+                <div class="services__service-show">
+                    <div class="services__service-show__left swap">
+                        <div class="services__service-show__left__picture">
+                            <img src="./src/assets/img/services/pic2.png" />
+                        </div>
+                    </div>
+                    <div class="services__service-show__right">
+                        <h1 class="services__service-show__right__title">国尽紙きだず楷</h1>
+                        <p class="services__service-show__right__subheading">演米ヱ塗月。</p>
+                        <p class="services__service-show__right__description">言ーみす課休真がンでひ率女仲南づ国尽紙きだず楷表ルタ容7次げゆけー法隊かりで今調えっ会議な検抜ノロヨ多籍華踏麻つり。囲づ鶏今ラムヘス審日は大投ネテキ原芸ウコヤ無細ツイヌ辞守こル弾行メ金愛ニコ約載はんさ化造ゅえつ臣理ぱ権制由筆じになず。朝り供取米合36晴0確チマニセ帯子ムミナノ演米ヱ塗月7犯ロニツテ曜連びトぽ崎太統抑げ。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
 
     <script type="text/javascript" src="./src/public/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+    <script>
+        new WOW().init();
+    </script>
 </html>

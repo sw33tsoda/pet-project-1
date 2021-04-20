@@ -1,0 +1,19 @@
+.slider {
+    &__slide-show {
+        height: $heading-height;
+    }
+    &__controls {
+        @include flex();
+        column-gap:10px;
+        &__switch {
+            &:first-child {
+                background:crimson !important;
+            }
+            background:white;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}

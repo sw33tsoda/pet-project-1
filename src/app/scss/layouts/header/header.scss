@@ -3,9 +3,13 @@
     height: 45px;
     padding: 0 5px 0 5px;
     box-sizing: border-box;
-
+    position: fixed;
     @include flex(space-between,center,row);
+    background:#212121;
 
+    &.breakline {
+        border-bottom: 1px #303030 solid;
+    }
     // Navbar
     @import 'navbar';
 }
