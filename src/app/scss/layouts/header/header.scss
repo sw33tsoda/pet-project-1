@@ -6,7 +6,9 @@
     position: fixed;
     @include flex(space-between,center,row);
     background:#212121;
-
+    .main-title {
+        font-size:1.5em;
+    }
     &.breakline {
         border-bottom: 1px #303030 solid;
     }
