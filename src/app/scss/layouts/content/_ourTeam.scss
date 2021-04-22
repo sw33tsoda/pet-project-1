@@ -1,0 +1,65 @@
+.our-team {
+    margin:0 auto;
+    margin-top: 25px;
+    max-width: $content-max-width;
+    height: auto;
+    @include grid(1fr 1fr 1fr,10px);
+    &__member {
+        background-color:rgba(220, 20, 60, 0.05);
+        transition:0.25s;
+        &:hover {
+            background-color:rgba(220, 20, 60, 0.1);
+            img {
+                transform: scale(0.8);
+            }
+        }
+        padding-top: 25px;
+        padding-bottom: 25px;
+        @include flex(center,center,column);
+        &__picture {
+            width: 15vw;
+            height: 15vw;
+            overflow: hidden;
+            @include flex(center,center,column);
+            border-radius: 50%;
+            img {
+                transition: 0.25s;
+            }
+        }
+
+        &__info {
+            text-align: center;
+            padding-top: 25px;
+            &__name {
+                font-size: 20pt;
+                font-weight: bold;
+            }
+            &__position {
+                font-size: 16pt;
+                color: crimson;
+                font-weight: bold;
+                &::before {
+                    content:'「';
+                    color:crimson;  
+                }
+                &::after {
+                    content:'」';
+                    color:crimson;  
+                }
+            }
+            &__quote {
+                text-align: justify;
+                font-style: italic;
+                &::before {
+                    content:'"';
+                }
+                &::after {
+                    content:'"';
+                }
+            }
+            &__work-ex {
+
+            }
+        }
+    }
+}

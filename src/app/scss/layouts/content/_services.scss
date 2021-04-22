@@ -1,7 +1,7 @@
 .services {
     margin:0 auto;
     margin-top: 25px;
-    max-width: 80vw;
+    max-width: $content-max-width;
     &__service-show {
         @include grid(1fr 1fr, 10px);
         @include breakpoints(mobile) {

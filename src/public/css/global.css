@@ -55,6 +55,20 @@
 .content .sub-content-title__big-title{color:crimson;text-align:center;font-size:4em}
 .content .sub-content-title__the-title{border-bottom:2px solid crimson;color:crimson;margin-bottom:2.5px}
 .content .sub-content-title__the-title::before{content:'◈';font-size:1.25em;margin-right:5px}
+.content .our-team{margin:0 auto;margin-top:25px;max-width:80vw;height:auto;display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:10px;row-gap:0}
+.content .our-team__member{background-color:rgba(220,20,60,0.05);transition:.25s;padding-top:25px;padding-bottom:25px;display:flex;justify-content:center;align-items:center;flex-direction:column}
+.content .our-team__member:hover{background-color:rgba(220,20,60,0.1)}
+.content .our-team__member:hover img{transform:scale(0.8)}
+.content .our-team__member__picture{width:15vw;height:15vw;overflow:hidden;display:flex;justify-content:center;align-items:center;flex-direction:column;border-radius:50%}
+.content .our-team__member__picture img{transition:.25s}
+.content .our-team__member__info{text-align:center;padding-top:25px}
+.content .our-team__member__info__name{font-size:20pt;font-weight:bold}
+.content .our-team__member__info__position{font-size:16pt;color:crimson;font-weight:bold}
+.content .our-team__member__info__position::before{content:'「';color:crimson}
+.content .our-team__member__info__position::after{content:'」';color:crimson}
+.content .our-team__member__info__quote{text-align:justify;font-style:italic}
+.content .our-team__member__info__quote::before{content:'"'}
+.content .our-team__member__info__quote::after{content:'"'}
 *{padding:0;margin:0}
 p,h1{margin:0;padding:0}
 a{text-decoration:none;color:white}
