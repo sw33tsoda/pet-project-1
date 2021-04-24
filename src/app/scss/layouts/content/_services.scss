@@ -1,6 +1,6 @@
 .services {
     margin:0 auto;
-    margin-top: 25px;
+    // margin-top: 25px;
     max-width: $content-max-width;
     &__service-show {
         @include grid(1fr 1fr, 10px);
@@ -50,15 +50,7 @@
             }
 
             &__title {
-                &::before {
-                    content:'「 ';
-                    color:crimson;  
-                }
-                &::after {
-                    content:' 」';
-                    color:crimson;  
-
-                }
+                @include japaneseBracket(crimson);
                 margin-right: 10px;
             }
             &__subheading {

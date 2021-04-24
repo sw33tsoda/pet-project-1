@@ -10,7 +10,32 @@
 
         @import 'slider';
     }
+
+    .breakline {
+        max-width: 80vw;
+        margin:auto;
+        margin-top: 15px;
+        margin-bottom: 30px;
+        position: relative;
+        .line {
+            outline: 2px solid crimson;
+        }
+
+        .symbol {
+            position: absolute;
+            font-size: 30pt;
+            left:50%;
+            top: -27.5px;
+            color: crimson;
+            background:#212121;
+            transform: translate(-50%,0%);
+            // padding: 0 5px 0 5px;
+            // box-sizing: border-box;
+        }
+    }
     @import 'services';
     @import 'subContentTitle';
     @import 'ourTeam';
+    @import 'career';
+    @import 'contact';
 }

@@ -30,3 +30,14 @@ $breakpoints: (
     column-gap: $column-gap;
     row-gap: $row-gap;
 }
+
+@mixin japaneseBracket($color: white) {
+    &::before {
+        content:'「';
+        color:$color;  
+    }
+    &::after {
+        content:'」';
+        color:$color;  
+    }
+}

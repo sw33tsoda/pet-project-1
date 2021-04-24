@@ -4,6 +4,10 @@
     max-width: $content-max-width;
     height: auto;
     @include grid(1fr 1fr 1fr,10px);
+    @include breakpoints(mobile) {
+        @include grid(1fr,10px);
+        grid-gap: 10px;
+    }
     &__member {
         background-color:rgba(220, 20, 60, 0.05);
         transition:0.25s;
@@ -13,10 +17,10 @@
                 transform: scale(0.8);
             }
         }
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding:25px;
         @include flex(center,center,column);
         &__picture {
+            background-color: crimson;
             width: 15vw;
             height: 15vw;
             overflow: hidden;
@@ -38,14 +42,7 @@
                 font-size: 16pt;
                 color: crimson;
                 font-weight: bold;
-                &::before {
-                    content:'「';
-                    color:crimson;  
-                }
-                &::after {
-                    content:'」';
-                    color:crimson;  
-                }
+                @include japaneseBracket(crimson);
             }
             &__quote {
                 text-align: justify;
@@ -58,7 +55,8 @@
                 }
             }
             &__work-ex {
-
+                font-weight: bold;
+                font-size: 1.25em;
             }
         }
     }

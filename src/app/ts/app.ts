@@ -50,13 +50,14 @@ class Navbar {
         return this;
     }
 
-    public useScrollToElementOnClick = (navItemIds:Array<string>) : Navbar => {
+    public useScrollToElement = (navItemIds:Array<string>) : Navbar => {
         for (const _id of navItemIds) {
-            $(_id).addEventListener<any>('click', (event) => {
-                let { id } = event.target;
-                id = id.slice(1,id.length);
-                $(`#${id}`).scrollIntoView({behavior:'smooth', block:'end'});
-            })
+            if ($(_id) !== null)
+                $(_id).addEventListener<any>('click', (event) => {
+                    let { id } = event.target;
+                    id = id.slice(1,id.length);
+                    $(`#${id}`).scrollIntoView({behavior:'smooth', block:'end'});
+                })
         }
 
         return this;
@@ -118,17 +119,25 @@ class App {
             }
         });
 
-        
-
+        for (let index = 0; index < document.querySelectorAll('.form-control__input').length; index++) {
+            document.querySelectorAll('.form-control__input')[index].addEventListener('focus',() => {
+                document.querySelectorAll('.form-control__input')[index].previousElementSibling.classList.add('form-control__label--has-value');
+            });
+            document.querySelectorAll('.form-control__input')[index].addEventListener('blur',() => {
+                if (document.querySelectorAll('.form-control__input')[index].value == '') {
+                    document.querySelectorAll('.form-control__input')[index].previousElementSibling.classList.remove('form-control__label--has-value');
+                }
+            });
+        }
     }
     
-    public main() {
+    public main() { 
         new Navbar()
             .setTarget('.navbar__icon')
             .setHideDelay(1000)
             .setBlock('navbar')
             .setEle('navbar__list')
-            .useScrollToElementOnClick(['#_homepage','#_services','#_our-team','#_products','#_contact']);
+            .useScrollToElement(['#_homepage','#_services','#_our-team','#_career','#_contact']);
     }
 }
 

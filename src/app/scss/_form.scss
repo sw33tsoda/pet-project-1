@@ -1,0 +1,97 @@
+.form-control {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 10px;
+    border: 2px solid crimson;
+    border-radius: 0.25em;
+
+    &__label, &__input {
+        text-indent: 5px;
+    }
+
+    &__label {
+        position: absolute;
+        top: 5px;
+        // left: 5px;
+        font-size: 20pt;
+        z-index: 2;
+        transition: 0.25s;
+        
+        &--has-value {
+            font-weight: bold;
+            top: 2px;
+            font-size: 8pt !important;
+        }
+    }
+
+    // &__input:focus + &__label {
+    //     color:red;
+    //     font-size: 10pt;
+    // }
+
+    &__input {
+        padding-top: 20px;
+        height: 30px;
+        width: 100%;
+        border:0;
+        outline: 0;
+        background: none;
+        font-size: 16pt;
+        // border: 2px solid crimson;
+        // border-radius: 0.25em;
+        color:white;
+        // margin-bottom: 50px;
+        z-index: 1;
+    }
+
+    .textarea {
+        height: 93px;
+        resize: none;
+        // padding-right: 10px;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: none;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            border-radius: 0.05em;
+            background: crimson;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            cursor: grab;
+        } 
+    }
+}
+
+.button {
+    background: crimson;
+    border:0;
+    padding: 5px 10px 5px 10px;
+    color:white;
+    border-radius: 0.25em;
+    font-weight: bold;
+    font-size: 1.25em;
+
+    &--left {
+        float: left;
+    }
+
+    &--right {
+        float: right;
+    }
+
+    &--fluid {
+        width: 100%;
+    }
+}
+
+.form {
+    width: 100%;
+}

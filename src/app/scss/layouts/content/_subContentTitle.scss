@@ -1,12 +1,13 @@
 .sub-content-title {
-    
     &--right {
         h1 {
             text-align: right;
         }
     }
     margin:0 auto;
-    margin-top: 25px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    // margin-bottom: 100px;
     max-width: $content-max-width;
     &__big-title {
         color:crimson;
@@ -19,7 +20,7 @@
         }
         
     &__the-title {
-        border-bottom: 2px solid crimson;
+        // border-bottom: 2px solid crimson;
         &::before {
             content: '◈';
             font-size: 1.25em;

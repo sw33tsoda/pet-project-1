@@ -1,0 +1,25 @@
+.contact {
+    margin: 0 auto;
+    // margin-top: 25px
+    max-width: 80vw;
+
+    
+    &__form-wrapper {
+        width: 100%;
+        @include grid(1fr 1fr,10px);
+        @include breakpoints(mobile) {
+            @include grid(1fr);
+        }
+        &__left {
+
+        }
+    
+        &__right {
+            // background-color:rgba(220, 20, 60, 0.05);
+        }
+    }
+
+    button {
+        width: 100%;
+    }
+}

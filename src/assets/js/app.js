@@ -36,14 +36,15 @@ var Navbar = (function () {
             _this.ele = eleName;
             return _this;
         };
-        this.useScrollToElementOnClick = function (navItemIds) {
+        this.useScrollToElement = function (navItemIds) {
             for (var _i = 0, navItemIds_1 = navItemIds; _i < navItemIds_1.length; _i++) {
                 var _id = navItemIds_1[_i];
-                $(_id).addEventListener('click', function (event) {
-                    var id = event.target.id;
-                    id = id.slice(1, id.length);
-                    $("#" + id).scrollIntoView({ behavior: 'smooth', block: 'end' });
-                });
+                if ($(_id) !== null)
+                    $(_id).addEventListener('click', function (event) {
+                        var id = event.target.id;
+                        id = id.slice(1, id.length);
+                        $("#" + id).scrollIntoView({ behavior: 'smooth', block: 'end' });
+                    });
             }
             return _this;
         };
@@ -87,6 +88,19 @@ var App = (function () {
                 $('.header').classList.remove('breakline');
             }
         });
+        var _loop_1 = function (index) {
+            document.querySelectorAll('.form-control__input')[index].addEventListener('focus', function () {
+                document.querySelectorAll('.form-control__input')[index].previousElementSibling.classList.add('form-control__label--has-value');
+            });
+            document.querySelectorAll('.form-control__input')[index].addEventListener('blur', function () {
+                if (document.querySelectorAll('.form-control__input')[index].value == '') {
+                    document.querySelectorAll('.form-control__input')[index].previousElementSibling.classList.remove('form-control__label--has-value');
+                }
+            });
+        };
+        for (var index = 0; index < document.querySelectorAll('.form-control__input').length; index++) {
+            _loop_1(index);
+        }
     }
     App.prototype.main = function () {
         new Navbar()
@@ -94,7 +108,7 @@ var App = (function () {
             .setHideDelay(1000)
             .setBlock('navbar')
             .setEle('navbar__list')
-            .useScrollToElementOnClick(['#_homepage', '#_services', '#_our-team', '#_products', '#_contact']);
+            .useScrollToElement(['#_homepage', '#_services', '#_our-team', '#_career', '#_contact']);
     };
     return App;
 }());
