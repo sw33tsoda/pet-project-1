@@ -108,6 +108,7 @@
 .content .contact__form-wrapper{width:100%;display:grid;grid-template-columns:1fr 1fr;column-gap:10px;row-gap:0}
 @media(min-width:320px) and (max-width:480px){.content .contact__form-wrapper{display:grid;grid-template-columns:1fr;column-gap:0;row-gap:0}
 }.content .contact button{width:100%}
+.footer{margin-top:50px}
 *{padding:0;margin:0}
 p,h1{margin:0;padding:0}
 a{text-decoration:none;color:white}
