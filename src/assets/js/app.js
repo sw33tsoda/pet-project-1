@@ -146,9 +146,11 @@ var Slider = (function () {
         this.list = [];
         this.currentSlide = 0;
         this.delay = 3000;
+        this.disabled = false;
         this.setList = function (list) {
             _this.list = list;
-            if (_this.list.length > 0) {
+            if (_this.list.length > 0 && _this.disabled == false) {
+                _this.setCurrentSlide(_this.currentSlide);
                 setInterval(function () {
                     if (_this.currentSlide < _this.list.length - 1) {
                         _this.currentSlide += 1;
@@ -178,7 +180,7 @@ var Slider = (function () {
             $('.slider__controls').innerHTML = HTML;
         };
         this.renderSlide = function () {
-            $('.slider__slide-show').innerHTML = "\n            <div class='slider__slide-show__slide'>\n                <div class='slider__slide-show__slide__left'>\n                    <div class='slider__slide-show__slide__left__title'>" + _this.list[_this.currentSlide].title + "</div>\n                    <div class='slider__slide-show__slide__left__description'>" + _this.list[_this.currentSlide].description + "</div>\n                    <div class='slider__slide-show__slide__left__button'>" + _this.list[_this.currentSlide].description + "</div>\n                </div>\n                <div class='slider__slide-show__slide__right'>\n                    <div class='slider__slide-show__slide__right__image'>\n                        <img src='" + _this.list[_this.currentSlide].imageUrl + "'/>\n                    </div>\n                </div>\n            </div>\n        ";
+            $('.slider__slide-show').innerHTML = "\n            <div class='slider__slide-show__slide'>\n                <div class='slider__slide-show__slide__left'>\n                    <div class='slider__slide-show__slide__left__title'>" + _this.list[_this.currentSlide].title + "</div>\n                    <div class='slider__slide-show__slide__left__subtitle'>" + _this.list[_this.currentSlide].subtitle + "</div>\n                    <div class='slider__slide-show__slide__left__description'>" + _this.list[_this.currentSlide].description + "</div>\n                    <button class='button'>\u3082\u3063\u3068\u898B\u308B</button>\n                </div>\n                <div class='slider__slide-show__slide__right'>\n                    <div class='slider__slide-show__slide__right__image'>\n                        <img src='" + _this.list[_this.currentSlide].imageUrl + "'/>\n                    </div>\n                </div>\n            </div>\n        ";
         };
     }
     return Slider;
@@ -237,8 +239,8 @@ var App = (function () {
 }());
 var _Slider = new Slider();
 _Slider.setList([
-    { imageUrl: '', title: 'title1', description: 'desc1' },
-    { imageUrl: '', title: 'title2', description: 'desc2' },
-    { imageUrl: '', title: 'title3', description: 'desc3' },
+    { imageUrl: './src/assets/img/slider/pic1.png', title: '等離都', subtitle: '目としらで株藤ろリ空広ヒマ市持もこレ和岩ごぎでま立万無化コレイ', description: '5態チヌ庫事りぼ国関短稿マア済72海事マタメ新笑げゃおフ結記かな新京いぶイ美毎ネヒ最記ッ善大読モ沼稚好つだおや。地モタミ財美こふろ成巨ドぴ所読セレナラ健格止せほみ子転クシカヨ重画りばゅ消九お木9適ロ育球ぶトじ福採行スげ保味フツ優海そな経位るおふゆ外建ヘヨセヌ洗保ラ投受キマ理丁侵ド。' },
+    { imageUrl: './src/assets/img/slider/pic2.png', title: '瀬巣知雲', subtitle: 'ーラ公州みッどて組際ろ諸性ト百給フナク稿謙個めぐもド', description: '読とへいぱ減問ムクヤ意任りーふわ大小ッきち字済局コヨイス獲着モイシコ更書ょろべぐ載百ワアヌレ拉票リケ養紙マノ通掲ころで博染速ラセヒ夫査エシソノ必新ぴふ応刊コア出伴飯駆どにごぞ。2西ンも択読やど申侍拓坂マ稿止てさをよ保更ぽ測鼻に権止ヒ交6費大つき全行名やまど。枠先流シニロテ左祐ての懸悪記シユキウ済茨なラ断負セヒ区47注給53載ユミホ報面ずれのら比67自やッえク寿委いこ所詰るざい玲凶圭リッへの。' },
+    { imageUrl: './src/assets/img/slider/pic3.png', title: '名等巣樹離', subtitle: 'フぱ攻専勝聞番ん術奪ね化商モイ風日スぼ', description: '道ヨ禁備むづらぽ入長ヲイモ連界さめ載問げ律尾いばよさ手短フエト者行ケ足62銀治ヌメチフ流芸そず後利メヨ先滋カユヤヨ経指申父孝わゅ。大ぼーフの今髪6高ッあら寄鋭ッ産堀9学ごぶね礎身択祉ロ金科抜爆間ぼくゃド。静へ投年ヨ持糸来ツナ裁後く無権ぱむいレ野体ツヲチ芸作ぶ来治てとめ草分テ困連ナミケ名月フユワ学青授員局しぜ。' },
 ]);
 var app = new App().main();

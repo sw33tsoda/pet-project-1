@@ -79,6 +79,11 @@
     font-weight: bold;
     font-size: 1.25em;
 
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(255, 21, 68);
+    }
     &--left {
         float: left;
     }

@@ -2,8 +2,93 @@
     // margin-top: 5px;
     &__slide-show {
         height: $heading-height;
+        // @include breakpoints(mobile) {
+            // height: auto;
+        // }
         background-color:rgba(220, 20, 60, 0.05);
         margin-bottom: 20px;
+
+        &__slide {
+            height: 100%;
+            padding: 5vw;
+            @include grid(1fr 1fr);
+
+            @include breakpoints(mobile) {
+                @include grid(1fr);
+            }
+            grid-gap: 50px !important;
+
+            &__left, &__right {
+                height: calc(100% - 10vw);
+            }
+
+            &__left {
+                position: relative;
+                @include flex(start,start,column);
+
+                &__title, &__subtitle, &__description {
+                    animation: 1s fadeIn;
+                }
+
+                &__title {
+                    font-size: 3em;
+                    font-weight: bold;
+                    color:crimson;
+                }
+
+                &__subtitle {
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    font-size: 1.25em;
+                } 
+
+                &__description {
+
+                }
+
+                button {
+                    position: absolute;
+                    bottom: 0;
+                    @include breakpoints(mobile) {
+                        // margin-top: 10px;
+                        // position: initial !important;
+                        width: 100%;
+                    }
+                }
+            }
+
+            &__right {
+                @include breakpoints(mobile) {
+                    display: none;
+                }
+                animation: 0.5s fadeIn;
+                @include flex(center,center,row);
+                &__image {
+                    // height: 100%;
+                    height: 500px;
+                    width: 100%;
+                    @include flex(center,center,row);
+                    // background-color:crimson;
+                    // position: relative;
+                    // &::after { 
+                    //     content: '';
+                    //     position: absolute;
+                    //     top: 5vw;
+                    //     right: 0;
+                    //     width: 30vw;
+                    //     height: 30vw;
+                    //     border-radius: 50%;
+                    //     background:crimson;
+                    //     z-index: -1;
+                    // }
+                    img {
+                        // display: none;
+                        width: 80%;
+
+                    }
+                }
+            }
+        }
     }
     &__controls {
         @include flex();

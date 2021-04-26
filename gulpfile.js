@@ -13,13 +13,13 @@ Gulp.task('scss', () => Gulp.src('./src/app/scss/*.scss')
 );
 
 // CSS === Uglify ===> UglyCSS (Public)
-Gulp.task('css', () => Gulp.src('./src/assets/css/*.css')
-    .pipe(UglifyCSS({
-        maxLineLen:     1,
-        uglyComments:   true,
-    }))
-    .pipe(Gulp.dest('./src/public/css/'))
-);
+// Gulp.task('css', () => Gulp.src('./src/assets/css/*.css')
+//     .pipe(UglifyCSS({
+//         maxLineLen:     1,
+//         uglyComments:   true,
+//     }))
+//     .pipe(Gulp.dest('./src/public/css/'))
+// );
 
 Gulp.task('typescript', () => Gulp.src('./src/app/ts/*.ts')
     .pipe(TypeScript({
@@ -28,12 +28,12 @@ Gulp.task('typescript', () => Gulp.src('./src/app/ts/*.ts')
     .pipe(Gulp.dest('./src/assets/js/'))
 );
 
-Gulp.task('javascript', () => Gulp.src('./src/assets/js/*.js')
-    .pipe(UglifyJS())
-    .pipe(Gulp.dest('./src/public/js/'))
-);
+// Gulp.task('javascript', () => Gulp.src('./src/assets/js/*.js')
+//     .pipe(UglifyJS())
+//     .pipe(Gulp.dest('./src/public/js/'))
+// );
 
-Gulp.task('run',Gulp.series(['scss','css'],['typescript','javascript']));
+Gulp.task('run',Gulp.series(['scss'],['typescript']));
 
 Gulp.task('watch', () => {
 
@@ -48,13 +48,13 @@ Gulp.task('watch', () => {
 
     // Watching CSS
     Gulp.watch('./src/app/scss/', Gulp.series(['scss']));
-    Gulp.watch('./src/assets/css/*.css', Gulp.series(['css']));
-    Gulp.watch('./src/public/css/*.css').on('change',browserSync.reload);
+    // Gulp.watch('./src/assets/css/*.css', Gulp.series(['css']));
+    Gulp.watch('./src/assets/css/*.css').on('change',browserSync.reload);
 
     // Watching Javascript
     Gulp.watch('./src/app/ts/', Gulp.series(['typescript']));
-    Gulp.watch('./src/assets/js/*.js', Gulp.series(['javascript']));
-    Gulp.watch('./src/public/js/*.js').on('change',browserSync.reload);
+    // Gulp.watch('./src/assets/js/*.js', Gulp.series(['javascript']));
+    Gulp.watch('./src/assets/js/*.js').on('change',browserSync.reload);
     console.log(`
         ❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤\n
         ❤                sw33tsoda                ❤\n

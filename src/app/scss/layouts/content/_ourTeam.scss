@@ -3,6 +3,7 @@
     margin-top: 25px;
     max-width: $content-max-width;
     height: auto;
+    // display: none;
     &__members-wrapper {
         @include grid(1fr 1fr 1fr,10px);
         @include breakpoints(mobile) {
@@ -21,6 +22,11 @@
             padding:25px;
             @include flex(center,center,column);
             &__picture {
+
+                i {
+                    font-size: 5vw;
+                }
+
                 background-color: crimson;
                 width: 15vw;
                 height: 15vw;
