@@ -1,61 +1,143 @@
 .career {
     max-width: 80vw;
     margin:0 auto;
-    @include grid(1fr 1fr,10px);
-    @include breakpoints(mobile) {
-        @include grid(1fr);
-    }
     font-family: 'Noto Sans JP',sans-serif !important;
-
-    > div > *:not(*:first-child) {
-        margin-top: 5px;
+    .title {
+        font-weight: bold;
+        color: crimson;
     }
-    &__left, &__right {
-        padding: 5px 10px 5px 10px;
-    }
-    &__left {
-        background-color:rgba(220, 20, 60, 0.05);
-        
-        &__title {
-            font-weight: bold;
-            color: crimson;
-        }
-        // @include flex(start,start,)
-
-        &__paragraph1 {
-            // font-family: 'Noto Sans JP',sans-serif !important;
-            font-weight: bold;
-            @include japaneseBracket;
-        }
-
-        &__paragraph2 {
-            font-style: italic;
-            font-size: 0.85em;
-        }
-
-        &__list {
-            list-style-position: inside;
-            list-style-type: decimal;
-            // font-family: 'Noto Sans JP',sans-serif !important;
-            li {
-                font-size: 1.25em;
-                font-weight: bold;
-            }
-        }
-
-    }
-
-    &__right {
+    
+    &__wrapper {
+        margin-bottom: 10px;
+        @include grid(1fr 1fr,10px);
         @include breakpoints(mobile) {
-            button {
-                width: 100%;
+            @include grid(1fr);
+        }
+        > div > *:not(*:first-child) {
+            margin-top: 5px;
+        }
+        &__left, &__right {
+            padding: 5px 10px 5px 10px;
+        }
+        &__left {
+            background-color:rgba(220, 20, 60, 0.05);
+            
+            // @include flex(start,start,)
+    
+            &__paragraph1 {
+                // font-family: 'Noto Sans JP',sans-serif !important;
+                font-weight: bold;
+                @include japaneseBracket;
+            }
+    
+            &__paragraph2 {
+                font-style: italic;
+                font-size: 0.85em;
+            }
+    
+            &__list {
+                list-style-position: inside;
+                list-style-type: decimal;
+                // font-family: 'Noto Sans JP',sans-serif !important;
+                li {
+                    font-size: 1.25em;
+                    font-weight: bold;
+                }
+            }
+    
+        }
+    
+        &__right {
+            @include breakpoints(mobile) {
+                button {
+                    width: 100%;
+                }
+            }
+    
+            @include flex(start,start,column);
+            &__title {
+                font-weight: bold;
+                color: crimson;
+            }
+        }
+    }
+    
+    &__available-jobs {
+        margin-top: 5px;
+        &__list {
+            @include grid(1fr 1fr 1fr);
+            grid-gap: 10px 10px !important;
+            @include breakpoints(mobile) {
+                @include grid(1fr 1fr);
+            }
+            &__job {
+                position: relative;
+                > div {
+                    z-index: 1;
+                }
+                &:after {
+                    content:'';
+                    position: absolute;
+                    left:0;
+                    right:0;
+                    width: 0%;
+                    transition: 0.25s;
+                    height: 100%;
+                    // background:red;
+        
+                    z-index: 0;
+                }
+                &:hover {
+                    
+                    &:after {
+                        // background-color:red;
+                        background-color:rgba(220, 20, 60, 0.1);
+                        width: 100%;
+                    }
+                }
+
+                height:100px;
+                background-color:rgba(220, 20, 60, 0.05);
+                animation: fadeIn 0.75s;
+                @include grid(1fr 1fr);
+
+                > div {
+                    // padding: 5px 10px 5px 10px;
+                    @include flex(center,center,row);
+                }
+
+                &__title {
+
+                }
+
+                &__position {
+
+                }
+
+                &__year-exp {
+
+                }
+
+                &__quantity {
+                    column-gap: 2.5px;
+                }
             }
         }
 
-        @include flex(start,start,column);
-        &__title {
+        &__controls {
+            margin-top: 10px;
+            @include flex(center,center,row);
+            column-gap: 20px;
             font-weight: bold;
-            color: crimson;
+            font-size: 20pt;
+            
+            &__prev, &__next {
+                color:crimson;
+                // background:crimson;
+                // padding: 5px;    
+                cursor: pointer;
+                user-select: none;
+            }
         }
     }
 }

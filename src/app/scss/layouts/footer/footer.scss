@@ -1,3 +1,46 @@
 .footer {
+    margin:0 auto;
     margin-top:50px;
+    max-width: 80vw;
+    // width: 100%;
+    &__nav {
+        @include grid(1fr 1fr 1fr 1fr 1fr);
+        @include breakpoints(mobile) {
+            display: none;
+        }
+        // grid-gap: 10px !important;
+        &__column {
+            &__subheading {
+                @include breakpoints(tablet) {
+                    font-size: 1.25em;    
+                }
+                color:crimson;
+                font-weight: bold;
+                font-size: 2em;
+            }
+
+            &__link {
+                transition: 0.25s;
+                &:hover {
+                    padding-right: 5px;
+                    border-right: 10px solid crimson;
+                    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(107, 107, 107, 0.5) 100%); 
+                }
+            }
+        }
+
+        @for $i from 2 to 6 {
+            &__column:nth-child(#{$i}) {
+                text-align: right;
+            }
+        }
+    }
+
+    &__address {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        margin-top: 25px;
+    }
+    margin-bottom: 25px;
 }

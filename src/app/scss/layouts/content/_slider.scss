@@ -1,13 +1,21 @@
 .slider {
+    // margin-top: 5px;
     &__slide-show {
         height: $heading-height;
+        background-color:rgba(220, 20, 60, 0.05);
+        margin-bottom: 20px;
     }
     &__controls {
         @include flex();
         column-gap:10px;
         &__switch {
-            &:first-child {
-                background:crimson !important;
+            // &:first-child {
+                // background:crimson !important;
+            // }
+            // transition: 0.25s;
+            &--selected {
+                animation: fadeIn 0.25s;
+                background-color: crimson;
             }
             background:white;
             width: 15px;
