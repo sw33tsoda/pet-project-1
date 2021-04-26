@@ -1,6 +1,6 @@
 *Written in Typescript and SCSS.
 
-*GulpJs as Task Runner.
+*GulpJs as Task Runner during development.
 
 *No external libraries embedded.
 
